@@ -1,0 +1,43 @@
+<div class="row" [ngSwitch]="specialite">
+    
+        <div class="col-12" *ngSwitchDefault>
+
+           
+          
+          
+          <div  *ngFor="let stage of stages$">
+               
+             
+            <div class="card">
+                <div class="card-body">
+                   
+      
+                    <div class="row">
+                        <div class="col-12 m-t-30">
+                            <div class="card card-inverse" style="background-color: #778899; border-color: #333;">
+                                <div class="card-header"  >
+                                    <h4 class="m-b-0 text-white" >{{stage.title}} </h4>
+                                    <h4 class="m-b-0 text-white" >{{stage.url}} </h4>
+                                </div>
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+      
+                    
+                </div>
+                
+            </div>
+      
+          </div>
+
+         
+      
+      
+           
+        </div>
+      </div>
+      
+      
+      

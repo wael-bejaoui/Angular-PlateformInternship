@@ -1,0 +1,40 @@
+<form form  #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" name="form" autocomplete="off">
+	<fieldset>
+	  <legend>My Profile</legend>
+	  <div class="form-group">
+				<label>Name</label>
+			<input type="text" #name="ngModel"  required class="form-control" [class.is-invalid]="name.invalid && name.touched" required minlength="4" name="name" [(ngModel)]="user.name">
+			<small class="text-danger" [class.d-none]="name.valid||name.untouched">Name is required</small>
+			<br>
+			<small class="text-danger" [class.d-none]="name.valid||name.untouched"> Name must be at least 4 characters long. </small>
+	  </div>
+	  <div class="form-group">
+			<label>Email</label>
+			<input type="email" #email="ngModel" required class="form-control" [class.is-invalid]="email.invalid && email.touched" name="email" [(ngModel)]="user.email">
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+	  </div>
+	  <div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input type="password" #password="ngModel" autocomplete="username" required class="form-control" [class.is-invalid]="password.invalid && password.touched" name="password" [(ngModel)]="user.password">
+		<small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required</small>
+	
+	  </div>
+	  <div class="form-group">
+		<label for="exampleSelect1">Spécialité</label>
+		<select class="form-control" id="exampleSelect1" name="specialite" [(ngModel)]="user.specialite">
+		  <option>Développeur Front-End</option>
+		  <option>Développeur PHP / LARAVEL</option>
+		  <option>Ingénieur Systèmes Run</option>
+		  <option>Développeur Dot NetJUNIOR</option>
+		  <option>Développeur informatique Fullstack</option>
+		</select>
+	  </div>
+	
+	 
+	  <div class="form-group">
+		<label for="exampleInputFile">CV</label>
+		<input type="file" class="form-control-file" name="cv" [(ngModel)]="user.cv" aria-describedby="fileHelp">
+	  </div>
+	  <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary">Submit</button>
+	</fieldset>
+  </form>
